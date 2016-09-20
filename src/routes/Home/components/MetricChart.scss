@@ -1,0 +1,23 @@
+@import "~styles/base";
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  margin: 12.5px;
+}
+
+.chart {
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+.chartTitle {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  color: $white;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}

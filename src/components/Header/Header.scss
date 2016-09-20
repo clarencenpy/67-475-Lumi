@@ -1,0 +1,72 @@
+@import "~styles/base";
+
+.activeRoute {
+  background-color: $white-highlight;
+  color: $primary-color !important;
+}
+
+.navbarContainer {
+  width: 100%;
+  background-color: $white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  border: solid 1px $off-white;
+}
+
+.link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  height: 58px;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: $black;
+  letter-spacing: 1px;
+}
+
+.link:hover {
+  background-color: $white-highlight;
+}
+
+.logo {
+  composes: link;
+  padding: 20px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: $primary-color;
+  border-right: solid 1px $white-highlight;
+}
+
+.logo:hover {
+  background-color: white;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.leftContainer {
+  composes: linkContainer;
+}
+
+.centerContainer {
+  composes: linkContainer;
+  flex: 1;
+}
+
+.rightContainer {
+  composes: linkContainer;
+  .link {
+    border-left: solid 1px $off-white;
+  }
+}
