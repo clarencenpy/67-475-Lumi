@@ -18,7 +18,7 @@ export const Header = () => (
         activeClassName={s.activeRoute}>
         Dashboard
       </IndexLink>
-      <Link to='/counter'
+      <Link to='/versions'
         className={s.link}
         activeClassName={s.activeRoute}>
         Alerts
