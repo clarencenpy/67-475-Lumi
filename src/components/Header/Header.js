@@ -8,7 +8,7 @@ export const Header = () => (
     <div className={s.leftContainer}>
       <Link to="/"
         className={[s.logo]}>
-        Starter
+        Lumi
       </Link>
     </div>
 
@@ -16,17 +16,17 @@ export const Header = () => (
       <IndexLink to='/'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Tab1
+        Dashboard
       </IndexLink>
       <Link to='/counter'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Tab2
+        Alerts
       </Link>
       <Link to='/invest'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Tab3
+        Search
       </Link>
     </div>
 
@@ -34,7 +34,7 @@ export const Header = () => (
       <Link to='/account'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Username
+        United States
       </Link>
       <Link to='/logout'
         className={s.link}
