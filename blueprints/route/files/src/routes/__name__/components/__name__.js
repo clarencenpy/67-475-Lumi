@@ -1,8 +1,8 @@
 import React from 'react'
-import classes from './<%= pascalEntityName %>.scss'
+import s from './<%= pascalEntityName %>.scss'
 
 export const <%= pascalEntityName %> = () => (
-  <div className={classes['<%= pascalEntityName %>']}>
+  <div className={s['<%= pascalEntityName %>']}>
     <h4><%= pascalEntityName %></h4>
   </div>
 )
