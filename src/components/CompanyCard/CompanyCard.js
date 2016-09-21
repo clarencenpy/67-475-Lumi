@@ -5,7 +5,7 @@ import classnames from 'classnames'
 const cx = classnames.bind(s)
 
 export const CompanyCard = (props) => (
-  <div className={cx(s.card, {[s.selected]: props.selected})}>
+  <div className={cx(s.card, {[s.selected]: props.selected})} onClick={props.onClick}>
     <div className={s.thumbnail}>
       <img src={props.imageUrl} />
     </div>

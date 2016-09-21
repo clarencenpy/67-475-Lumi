@@ -1,0 +1,137 @@
+import _ from 'underscore'
+
+// ------------------------------------
+// Constants
+// ------------------------------------
+export const APPLY_SEARCH = 'Search.APPLY_SEARCH'
+export const TOGGLE_COMPANY = 'Search.TOGGLE_COMPANY'
+
+// ------------------------------------
+// Actions
+// ------------------------------------
+export function applySearch (value = "") {
+  return {
+    type: APPLY_SEARCH,
+    payload: value
+  }
+}
+export function toggleCompany (title) {
+  return {
+    type: TOGGLE_COMPANY,
+    payload: title
+  }
+}
+
+const initialState = {
+  results: [
+    {
+      title: 'Google',
+      text: 'Social',
+      imageUrl: 'https://www.seeklogo.net/wp-content/uploads/2015/09/new-google-favicon-logo.png',
+      selected: false
+    },
+    {
+      title: 'Facebook',
+      text: 'Social',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_(square).png',
+      selected: false
+    },
+    {
+      title: 'Uber',
+      text: 'Transport',
+      imageUrl: 'http://logo-png.com/thumbs-logo/uber-logo.png',
+      selected: false
+    },
+    {
+      title: 'Instagram',
+      text: 'Social',
+      imageUrl: 'http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png',
+      selected: false
+    },
+    {
+      title: 'Venmo',
+      text: 'Finance',
+      imageUrl: 'https://lh3.googleusercontent.com/UvEwv56zTj13dO1qr4fj4wDDc5Fwzc6O1ke4DnBSKN1Wa42zBDzGREwVLD9HqEAoIzs=w300',
+      selected: false
+    },
+    {
+      title: 'Messenger',
+      text: 'Chat',
+      imageUrl: 'http://www.freeiconspng.com/uploads/facebook-messenger-vector-logo-logo-15.png',
+      selected: false
+    },
+    {
+      title: 'WhatsApp',
+      text: 'Chat',
+      imageUrl: 'http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png',
+      selected: false
+    },
+    {
+      title: 'Dropbox',
+      text: 'Productivity',
+      imageUrl: 'http://www.free-icons-download.net/images/dropbox-flag-icons-65842.png',
+      selected: false
+    },
+    {
+      title: 'Gmail',
+      text: 'Productivity',
+      imageUrl: 'https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300',
+      selected: false
+    },
+    {
+      title: 'Flipboard',
+      text: 'News',
+      imageUrl: 'http://megaicons.net/static/img/icons_sizes/27/89/512/metroui-apps-flipboard-icon.png',
+      selected: false
+    },
+    {
+      title: 'G Maps',
+      text: 'Maps',
+      imageUrl: 'http://logonoid.com/images/google-maps-logo.png',
+      selected: false
+    },
+    {
+      title: 'Evernote',
+      text: 'Productivity',
+      imageUrl: 'https://gauravchaplot.files.wordpress.com/2016/01/evernote-logo.png?w=300',
+      selected: false
+    }
+  ]
+}
+
+// ------------------------------------
+// Action Handlers
+// ------------------------------------
+const ACTION_HANDLERS = {
+  [APPLY_SEARCH]: (state, action) => {
+
+    let newState = {...state}
+    newState.results = _.filter(initialState.results, result => {
+      if (result.title.toUpperCase().indexOf(action.payload.toUpperCase()) >= 0) {
+        return true
+      }
+    })
+    return newState
+  },
+
+  [TOGGLE_COMPANY]: (state, action) => {
+    let newState = {...state}
+    newState.results = _.map(newState.results, result => {
+      if (result.title === action.payload) {
+        result.selected = !result.selected
+      }
+      return result
+    })
+    return newState
+  }
+}
+
+// ------------------------------------
+// Reducer
+// ------------------------------------
+
+export default function reducer (state = initialState, action) {
+  const handler = ACTION_HANDLERS[action.type]
+
+  return handler ? handler(state, action) : state
+}

@@ -1,0 +1,94 @@
+@import "../../../styles/base";
+
+.root {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.heroContainer {
+  background: $blue-grey;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .heroImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  .heroText {
+
+    max-width: 500px;
+
+    .large {
+      color: $primary-color;
+      font-family: 'Circular', sans-serif;
+      font-size: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .small {
+      color: $white-smoke;
+      font-size: 16px;
+    }
+
+  }
+}
+
+.searchContainer {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.searchBoxContainer {
+  width: calc(60% - 10px);  //alignment with the results
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.searchInput {
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 40px;
+  padding: 0 20px;
+
+  color: black;
+  background: white;
+  box-shadow: $box-shadow-small;
+}
+
+.searchInput::-webkit-input-placeholder {
+  color: #4f4f4f !important;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.right {
+  margin-left: 20px;
+  justify-self: flex-end;
+  width: 36%;
+  padding: 20px;
+  background: white;
+  display: flex;
+  justify-content: center;
+
+  .text {
+
+  }
+
+
+}
+

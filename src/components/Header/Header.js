@@ -23,7 +23,7 @@ export const Header = () => (
         activeClassName={s.activeRoute}>
         Alerts
       </Link>
-      <Link to='/invest'
+      <Link to='/search'
         className={s.link}
         activeClassName={s.activeRoute}>
         Search
