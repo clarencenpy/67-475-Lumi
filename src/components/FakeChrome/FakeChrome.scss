@@ -1,0 +1,18 @@
+.root {
+  width: 100%;
+}
+
+.left {
+  height: 70px;
+  width: 405px;
+}
+
+.center {
+  height: 70px;
+  width: calc(100vw - 405px - 250px);
+}
+
+.right {
+  height: 70px;
+  width: 250px;
+}

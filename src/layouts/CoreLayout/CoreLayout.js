@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from '../../components/Header'
-import classes from './CoreLayout.scss'
+import FakeChrome from '../../components/FakeChrome'
+import s from './CoreLayout.scss'
 import '../../styles/core.scss'
 
 export const CoreLayout = ({ children }) => (
-  <div className={classes.wrapper}>
+  <div className={s.wrapper}>
+    <FakeChrome />
     <Header />
-    <div className={classes.mainContainer}>
+    <div className={s.mainContainer}>
       {children}
     </div>
   </div>
