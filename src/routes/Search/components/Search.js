@@ -11,8 +11,8 @@ export const Search = (props) => {
       <div className={s.heroContainer}>
         <img className={s.heroImage} src={heroImage} />
         <div className={s.heroText}>
-          <div className={s.large}>Lumi</div>
-          <div className={s.small}>Subscribe to the apps you use and we will keep you updated when there are any updates to their privacy policies</div>
+          <div className={s.large}>Lumi Summarizer</div>
+          <div className={s.small}>See and Compare Privacy Notices the Easy Way</div>
         </div>
       </div>
 
