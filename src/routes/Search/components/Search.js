@@ -20,7 +20,7 @@ export const Search = (props) => {
 
         <div className={s.searchBoxContainer}>
           <input className={s.searchInput} type="text"
-                 placeholder='Search and Add apps you use ...'
+                 placeholder='Type here to filter Apps...'
                  onChange={props.applySearch.bind(this)}
           />
         </div>
