@@ -2,7 +2,7 @@ import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import s from './Header.scss'
 
-export const Header = () => (
+export const Header = (props) => (
   <div className={s.navbarContainer}>
 
     <div className={s.leftContainer}>
@@ -34,7 +34,7 @@ export const Header = () => (
       <Link to='/account'
         className={s.link}
         activeClassName={s.activeRoute}>
-        United States
+        {props.country}
       </Link>
       <Link to='/logout'
         className={s.link}

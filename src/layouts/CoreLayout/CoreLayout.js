@@ -4,14 +4,14 @@ import FakeChrome from '../../components/FakeChrome'
 import s from './CoreLayout.scss'
 import '../../styles/core.scss'
 
-export const CoreLayout = ({ children }) => (
-  <div className={s.wrapper}>
-    <FakeChrome />
-    <Header />
-    <div className={s.mainContainer}>
-      {children}
-    </div>
-  </div>
+const CoreLayout = ({children, coreData}) => (
+        <div className={s.wrapper}>
+          <FakeChrome />
+          <Header country={coreData.country} />
+          <div className={s.mainContainer}>
+            {children}
+          </div>
+        </div>
 )
 
 CoreLayout.propTypes = {
