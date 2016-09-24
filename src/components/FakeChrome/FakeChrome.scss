@@ -1,3 +1,5 @@
+@import "~styles/base";
+
 .root {
   width: 100%;
 }
@@ -15,4 +17,35 @@
 .right {
   height: 70px;
   width: 250px;
+}
+
+.url {
+  position: fixed;
+  top: 43px;
+  left: 120px;
+  font-size: 16px;
+  color: black;
+}
+
+.title {
+  position: fixed;
+  top: 13px;
+  left: 105px;
+  font-size: 16px;
+  color: #313131;
+}
+
+.iconClickTarget {
+  transition: box-shadow 0.2s;
+  position: fixed;
+  top: 38px;
+  right: 26px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    box-shadow: $box-shadow-small;
+  }
 }

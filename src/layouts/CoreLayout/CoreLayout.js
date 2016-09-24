@@ -6,7 +6,7 @@ import '../../styles/core.scss'
 
 const CoreLayout = ({children, coreData}) => (
         <div className={s.wrapper}>
-          <FakeChrome />
+          <FakeChrome url={coreData.fakeUrl} title={coreData.fakeTitle} />
           <Header country={coreData.country} />
           <div className={s.mainContainer}>
             {children}

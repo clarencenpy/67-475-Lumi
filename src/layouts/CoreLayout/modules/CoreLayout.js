@@ -27,7 +27,9 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 
 const initialState = {
-  country: 'United States'
+  country: 'United States',
+  fakeUrl: "www.lumi.org",
+  fakeTitle: "Lumi"
 }
 
 export default function reducer (state = initialState, action) {
