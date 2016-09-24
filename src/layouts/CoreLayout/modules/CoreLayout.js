@@ -1,15 +1,15 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const ACTION = 'CoreLayout.ACTION'
+export const START_LUMI = 'CoreLayout.START_LUMI'
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function action (value) {
+export function startLumi () {
   return {
-    type: ACTION,
-    payload: value
+    type: START_LUMI,
+    payload: {}
   }
 }
 
@@ -17,7 +17,8 @@ export function action (value) {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [ACTION]: (state, action) => {
+  [START_LUMI]: (state, action) => {
+    console.log('clicked start Lumi')
     return {...state}
   }
 }

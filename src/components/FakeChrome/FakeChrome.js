@@ -8,7 +8,7 @@ export const FakeChrome = (props) => (
   <div>
     <div className={s.url}>{props.url}</div>
     <div className={s.title}>{props.title}</div>
-    <div className={s.iconClickTarget}></div>
+    <div className={s.iconClickTarget} onClick={props.clickLumiHandler}></div>
     <img src={left} className={s.left} />
     <img src={center} className={s.center} />
     <img src={right} className={s.right} />
