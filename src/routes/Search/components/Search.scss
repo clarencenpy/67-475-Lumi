@@ -4,7 +4,7 @@
   padding: 20px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
 }
 
@@ -44,8 +44,11 @@
   }
 }
 
-.searchContainer {
+.left {
   width: 60%;
+}
+
+.searchContainer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -53,13 +56,12 @@
 }
 
 .searchBoxContainer {
-  width: calc(60% - 10px);  //alignment with the results
   margin-bottom: 20px;
   box-sizing: border-box;
 }
 
 .searchInput {
-  width: 100%;
+  width: calc(100% - 10px); //align with results
   font-size: 20px;
   text-transform: uppercase;
   line-height: 60px;
@@ -85,17 +87,24 @@
 
 .right {
   margin-left: 20px;
-  justify-self: flex-end;
-  width: 36%;
-  padding: 20px;
+  width: 40%;
+}
+
+.actionPanel {
   background: white;
-  display: flex;
-  justify-content: center;
+  padding: 20px;
 
-  .text {
-
+  .displayText {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1em;
+    margin-bottom: 10px;
   }
 
-
+  .buttonContainer {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 

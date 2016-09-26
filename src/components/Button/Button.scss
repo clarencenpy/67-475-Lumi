@@ -1,0 +1,45 @@
+@import "~styles/base";
+
+.button {
+  transition: all 0.2s;
+  padding: 15px 40px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+
+  &.primary {
+    color: #fff;
+    background: $primary-color;
+    &:hover {
+      background: $primary-color-light;
+    }
+  }
+
+  &.warning {
+    color: #fff;
+    background: $accent-color;
+    &:hover {
+      background: $accent-color-light;
+    }
+  }
+
+  &.large {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.marginTop {
+    margin-top: 10px;
+  }
+}
+

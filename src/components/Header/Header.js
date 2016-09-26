@@ -26,7 +26,7 @@ export const Header = (props) => (
       <Link to='/search'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Search
+        Summarizer
       </Link>
     </div>
 

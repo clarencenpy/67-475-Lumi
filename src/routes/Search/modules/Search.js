@@ -5,6 +5,7 @@ import _ from 'underscore'
 // ------------------------------------
 export const APPLY_SEARCH = 'Search.APPLY_SEARCH'
 export const TOGGLE_COMPANY = 'Search.TOGGLE_COMPANY'
+export const SHOW_COMPARE_VIEW = 'Search.SHOW_COMPARE_VIEW'
 
 // ------------------------------------
 // Actions
