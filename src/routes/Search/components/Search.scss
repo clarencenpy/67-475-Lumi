@@ -139,3 +139,31 @@
 }
 
 
+//Animation for screen overlay
+.appear {
+  opacity: 0.01;
+}
+
+.appear.appearActive {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.enter {
+  opacity: 0.01;
+}
+
+.enter.enterActive {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.leave {
+  opacity: 1;
+}
+
+.leave.leaveActive {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+

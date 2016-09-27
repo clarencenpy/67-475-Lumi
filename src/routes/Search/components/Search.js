@@ -3,6 +3,7 @@ import CompanyCard from '../../../components/CompanyCard'
 import heroImage from '../assets/Lumi_noborder-01.png'
 import Button from '../../../components/Button'
 import CompareView from './CompareView'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import _ from 'underscore'
 import s from './Search.scss'
 
@@ -73,10 +74,29 @@ export const Search = (props) => {
         </div>
       </div>
 
-      { props.showCompareView ? <div className={s.fullscreen}>
-        <div className={s.closeButton} onClick={props.toggleCompareView}></div>
-        <CompareView results={props.results} />
-      </div> : null }
+      <ReactCSSTransitionGroup
+        transitionName={{
+          appear: s.appear,
+          appearActive: s.appearActive,
+          enter: s.enter,
+          enterActive: s.enterActive,
+          leave: s.leave,
+          leaveActive: s.leaveActive,
+        }}
+        transitionAppear={true}
+        transitionAppearTimeout={300}
+        transitionEnterTimeout={300}
+        transitionLeaveTimeout={300}
+      >
+        {
+          props.showCompareView ?
+          <div className={s.fullscreen} key="fullscreenOverlay">
+            <div className={s.closeButton} onClick={props.toggleCompareView}></div>
+            <CompareView results={props.results} />
+          </div> : null
+        }
+
+      </ReactCSSTransitionGroup>
 
     </div>
   )
