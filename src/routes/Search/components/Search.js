@@ -33,7 +33,7 @@ export const Search = (props) => {
   return (
     <div>
 
-      <Hero mainText="Lumi Summarizer" subText="See and Compare Privacy Notices Easily" />
+      <Hero mainText="Lumi Search" subText="Find and Compare Privacy Notices Easily" />
 
       <div className={s.root}>
 

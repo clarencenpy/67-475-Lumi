@@ -16,7 +16,7 @@ export const Header = (props) => (
       <IndexLink to='/'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Dashboard
+        My Dashboard
       </IndexLink>
       <Link to='/versions'
         className={s.link}
@@ -26,7 +26,7 @@ export const Header = (props) => (
       <Link to='/search'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Summarizer
+        Search Apps
       </Link>
     </div>
 
