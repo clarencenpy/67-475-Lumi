@@ -4,6 +4,7 @@ import heroImage from '../assets/Lumi_noborder-01.png'
 import Button from '../../../components/Button'
 import CompareView from './CompareView'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import { PopoverWrapper } from '@terebentina/react-popover'
 import _ from 'underscore'
 import s from './Search.scss'
 
@@ -74,6 +75,7 @@ export const Search = (props) => {
         </div>
       </div>
 
+      <PopoverWrapper>
       <ReactCSSTransitionGroup
         transitionName={{
           appear: s.appear,
@@ -97,6 +99,7 @@ export const Search = (props) => {
         }
 
       </ReactCSSTransitionGroup>
+      </PopoverWrapper>
 
     </div>
   )

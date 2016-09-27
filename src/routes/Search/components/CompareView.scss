@@ -36,6 +36,17 @@ td {
   text-align: center;
 }
 
+.black {
+  color: black !important;
+}
+
 .opt {
   color: royalblue;
+}
+
+.popoverContent {
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
 }

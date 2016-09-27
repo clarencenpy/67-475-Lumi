@@ -1,8 +1,10 @@
 import React from 'react'
 import s from './CompareView.scss'
 import FontAwesome from 'react-fontawesome'
+import Popover from '@terebentina/react-popover'
 import classnames from 'classnames'
 import _ from 'underscore'
+import '@terebentina/react-popover/lib/styles.css'
 
 const cx = classnames.bind(s)
 
@@ -20,7 +22,7 @@ const RowItem = (props) => {
   let contents
   switch (fieldData.type) {
     case 'YES':
-      contents = (<FontAwesome name="check" size="2x"/>)
+      contents = (<FontAwesome name="check" size="2x" className={s.black} />)
       break
     case 'NO':
       contents = null;
@@ -35,7 +37,19 @@ const RowItem = (props) => {
 
   return (
     <td className={s.rowItem}>
-      { contents }
+      {
+        fieldData.htmlContent ? <Popover
+          position="top"
+          trigger={contents}
+        >
+          <div className={s.popoverContent}>
+            <div dangerouslySetInnerHTML={{__html: fieldData.htmlContent}}></div>
+          </div>
+        </Popover> :
+        contents
+      }
+
+
     </td>
   )
 }
