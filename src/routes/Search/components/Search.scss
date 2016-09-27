@@ -60,6 +60,20 @@
   box-sizing: border-box;
 }
 
+.emptyResults {
+  width: calc(100% - 10px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  padding: 20px;
+  .text {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 .searchInput {
   width: calc(100% - 10px); //align with results
   font-size: 20px;
@@ -95,7 +109,7 @@
   padding: 20px;
 
   .displayText {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     line-height: 1em;
     margin-bottom: 10px;

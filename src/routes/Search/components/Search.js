@@ -52,14 +52,18 @@ export const Search = (props) => {
           </div>
           <div className={s.searchContainer}>
             {
-              props.results.map(result => (
+              props.results.length > 0 ? props.results.map(result => (
                 <CompanyCard selected={result.selected}
                              title={result.title}
                              text={result.text}
                              imageUrl={result.imageUrl}
                              onClick={props.toggleCompany.bind(this, result.title)}
                 />
-              ))
+              )) :
+              <div className={s.emptyResults}>
+                <div className={s.text}>Did not find the app you use?</div>
+                <Button primary large>Upload their privacy policy</Button>
+              </div>
             }
           </div>
         </div>
