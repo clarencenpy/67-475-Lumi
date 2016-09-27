@@ -37,7 +37,7 @@ export const Search = (props) => {
         <img className={s.heroImage} src={heroImage} />
         <div className={s.heroText}>
           <div className={s.large}>Lumi Summarizer</div>
-          <div className={s.small}>See and Compare Privacy Notices the Easy Way</div>
+          <div className={s.small}>See and Compare Privacy Notices Easily</div>
         </div>
       </div>
 
