@@ -75,7 +75,28 @@ const initialState = {
       title: 'Instagram',
       text: 'Social',
       imageUrl: 'http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png',
-      selected: false
+      selected: false,
+      summary: {
+        ebp: {
+          type: 'YES'
+        },
+        mp: {
+          type: 'YES'
+        },
+        pp: {
+          type: 'YES'
+        },
+        abp: {
+          type: 'OPT-IN',
+          htmlContent: `<div>Your permission is when a third party app requests for your information</div>`
+        },
+        tpm: {
+          type: 'YES'
+        },
+        sec: {
+          type: 'YES'
+        }
+      }
     },
     {
       title: 'Venmo',
@@ -87,7 +108,28 @@ const initialState = {
       title: 'Messenger',
       text: 'Chat',
       imageUrl: 'http://www.freeiconspng.com/uploads/facebook-messenger-vector-logo-logo-15.png',
-      selected: false
+      selected: false,
+      summary: {
+        ebp: {
+          type: 'YES'
+        },
+        mp: {
+          type: 'YES'
+        },
+        pp: {
+          type: 'YES'
+        },
+        abp: {
+          type: 'OPT-OUT',
+          htmlContent: `<div>Your permission is when a third party app requests for your information</div>`
+        },
+        tpm: {
+          type: 'YES'
+        },
+        sec: {
+          type: 'NO'
+        }
+      }
     },
     {
       title: 'WhatsApp',
