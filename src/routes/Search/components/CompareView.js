@@ -28,6 +28,9 @@ const RowItem = (props) => {
     case 'OPT-IN':
       contents = (<span className={s.opt}>Opt-In</span>)
       break
+    case 'OPT-OUT':
+      contents = (<span className={s.opt}>Opt-Out</span>)
+      break
   }
 
   return (
@@ -90,7 +93,7 @@ export const CompareView = (props) => {
         <tr>
           <td>
             <div><strong>Profiling Purpose</strong></div>
-            <div>Uses data mining and analytics to generate further insights about you based on your interactions with their products. Includes transactions, messages, preferences etc.</div>
+            <div>To generate further insights about you based on your interactions with their products using data analytics. Includes your transactions, messages, preferences etc.</div>
           </td>
           {
             selectedCompanies.map(c => (
