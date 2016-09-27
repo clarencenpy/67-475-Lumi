@@ -1,3 +1,83 @@
-.Dashboard {
+@import '~styles/base';
+.root {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
 
+.notificationsPanel {
+  width: 400px;
+
+  .notification {
+    background: white;
+    border-radius: 5px;
+    border-left: 5px solid black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: $box-shadow-small;
+
+    .body {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+
+      .image {
+        width: 60px;
+        height: 60px;
+      }
+
+      .textbox {
+        margin-left: 10px;
+
+        .title {
+          line-height: 35px;
+          font-size: 25px;
+          font-weight: bold;
+        }
+        .date {
+          font-style: italic;
+          line-height: 15px;
+          font-size: 15px;
+          color: dimgrey;
+        }
+      }
+    }
+
+    .actionButtons {
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid grey;
+
+      .button {
+        height: 50%;
+        padding: 10px;
+        font-size: 15px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.2s;
+        cursor: pointer;
+
+        &.read:hover {
+          background: #cee0ff;
+        }
+
+        &.dismiss:hover {
+          background: #ffd7e0;
+        }
+
+        &:first-child {
+          border-bottom: 1px solid grey;
+        }
+
+      }
+
+
+    }
+
+  }
 }

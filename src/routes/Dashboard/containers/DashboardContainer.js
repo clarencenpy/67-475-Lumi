@@ -18,7 +18,9 @@ const mapActionCreators = {
 }
 
 const mapStateToProps = (state) => ({
-  results: state.results
+  notifications: state.dashboard.notifications,
+  apps: state.dashboard.apps,
+  preferences: state.dashboard.preferences
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

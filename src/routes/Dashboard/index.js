@@ -12,7 +12,7 @@ export default (store) => ({
       const reducer = require('./modules/Dashboard').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'Dashboard', reducer })
+      injectReducer(store, { key: 'dashboard', reducer })
 
       /*  Return getComponent   */
       cb(null, Dashboard)

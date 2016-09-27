@@ -47,7 +47,15 @@ const ACTION_HANDLERS = {
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = 0
+const initialState = {
+  notifications: [{
+    title: "WhatsApp",
+    date: "Aug 25, 2016",
+    imageUrl: "http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
+  }],
+  apps: [],
+  preferences: {}
+}
 export default function reducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
