@@ -9,6 +9,8 @@
   width: 150px;
   padding-top: 5px;
   flex: auto;
+  box-shadow: $box-shadow-small;
+  cursor: pointer;
 }
 
 .card.selected {
@@ -17,7 +19,7 @@
 }
 
 .card:hover {
-  box-shadow: $box-shadow-small;
+  box-shadow: $box-shadow-large;
 }
 
 .thumbnail img {

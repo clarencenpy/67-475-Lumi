@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './Dashboard.scss'
 import Hero from '../../../components/Hero'
-import Button from '../../../components/Button'
+import CompanyCard from '../../../components/CompanyCard'
 
 const Notification = (props) => (
   <div className={s.notification}>
@@ -25,15 +25,33 @@ export const Dashboard = (props) => {
       <Hero mainText="Lumi Dashboard" subText="Monitor and Manage the Apps you use" />
 
       <div className={s.root}>
-        <div className={s.notificationsPanel}>
-          {
-            props.notifications.map(n => (
-              <Notification imageUrl={n.imageUrl} title={n.title} date={n.date} />
-            ))
-          }
+
+        <div className={s.topSection}>
+          <div className={s.notificationsPanel}>
+            <div className={s.headerText}>Updated<span className={s.countBubble}>{props.notifications.length}</span></div>
+            {
+              props.notifications.map(n => (
+                <Notification imageUrl={n.imageUrl} title={n.title} date={n.date} />
+              ))
+            }
+          </div>
+        </div>
+
+        <div className={s.bottomSection}>
+          <div className={s.headerText}>Your Apps</div>
+          <div className={s.appsList}>
+            {
+              props.apps.map(a => (
+                <CompanyCard selected={false}
+                             title={a.title}
+                             text={a.text}
+                             imageUrl={a.imageUrl}
+                />
+              ))
+            }
+          </div>
         </div>
       </div>
-
 
     </div>
   )

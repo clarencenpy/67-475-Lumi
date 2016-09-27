@@ -48,12 +48,39 @@ const ACTION_HANDLERS = {
 // Reducer
 // ------------------------------------
 const initialState = {
-  notifications: [{
-    title: "WhatsApp",
-    date: "Aug 25, 2016",
-    imageUrl: "http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
-  }],
-  apps: [],
+  notifications: [
+    {
+      title: "WhatsApp",
+      date: "Aug 25, 2016",
+      imageUrl: "http://icons.iconarchive.com/icons/dtafalonso/android-l/512/WhatsApp-icon.png"
+    }],
+    apps: [
+    {
+      title: 'Facebook',
+      text: 'Social',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_(square).png',
+    },
+    {
+      title: 'Dropbox',
+      text: 'Productivity',
+      imageUrl: 'http://www.free-icons-download.net/images/dropbox-flag-icons-65842.png',
+    },
+    {
+      title: 'Gmail',
+      text: 'Productivity',
+      imageUrl: 'https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300',
+    },
+    {
+      title: 'Flipboard',
+      text: 'News',
+      imageUrl: 'http://megaicons.net/static/img/icons_sizes/27/89/512/metroui-apps-flipboard-icon.png',
+    },
+    {
+      title: 'Evernote',
+      text: 'Productivity',
+      imageUrl: 'https://gauravchaplot.files.wordpress.com/2016/01/evernote-logo.png?w=300',
+    }
+  ],
   preferences: {}
 }
 export default function reducer (state = initialState, action) {
