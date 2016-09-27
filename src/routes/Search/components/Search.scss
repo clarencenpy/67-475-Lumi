@@ -8,42 +8,6 @@
   justify-content: flex-start;
 }
 
-.heroContainer {
-  background-image: url("../../../static/PolygonBackground.png"), linear-gradient(90deg, rgb(9, 88, 159), rgb(20, 55, 90));
-  background-size: cover;
-  height: 200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  .heroImage {
-    width: 150px;
-    height: 150px;
-    margin-left: 50px;
-    margin-right: 10px;
-  }
-
-  .heroText {
-
-    max-width: 500px;
-
-    .large {
-      color: $white;
-      font-family: 'Circular', sans-serif;
-      font-size: 30px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .small {
-      color: $off-white;
-      font-size: 20px;
-    }
-
-  }
-}
-
 .left {
   width: 60%;
 }

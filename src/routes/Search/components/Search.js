@@ -1,6 +1,6 @@
 import React from 'react'
 import CompanyCard from '../../../components/CompanyCard'
-import heroImage from '../assets/Lumi_noborder-01.png'
+import Hero from '../../../components/Hero'
 import Button from '../../../components/Button'
 import CompareView from './CompareView'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -33,13 +33,7 @@ export const Search = (props) => {
   return (
     <div>
 
-      <div className={s.heroContainer}>
-        <img className={s.heroImage} src={heroImage} />
-        <div className={s.heroText}>
-          <div className={s.large}>Lumi Summarizer</div>
-          <div className={s.small}>See and Compare Privacy Notices Easily</div>
-        </div>
-      </div>
+      <Hero mainText="Lumi Summarizer" subText="See and Compare Privacy Notices Easily" />
 
       <div className={s.root}>
 
