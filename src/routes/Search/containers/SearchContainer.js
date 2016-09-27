@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { applySearch, toggleCompany } from '../modules/Search'
+import { applySearch, toggleCompany, toggleCompareView } from '../modules/Search'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -14,11 +14,13 @@ import Search from '../components/Search'
 
 const mapActionCreators = {
   applySearch: (event) => applySearch(event.target.value),
-  toggleCompany
+  toggleCompany,
+  toggleCompareView,
 }
 
 const mapStateToProps = (state) => ({
-  results: state.search.results
+  results: state.search.results,
+  showCompareView: state.search.showCompareView
 })
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:

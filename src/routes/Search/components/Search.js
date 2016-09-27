@@ -2,6 +2,7 @@ import React from 'react'
 import CompanyCard from '../../../components/CompanyCard'
 import heroImage from '../assets/Lumi_noborder-01.png'
 import Button from '../../../components/Button'
+import CompareView from './CompareView'
 import _ from 'underscore'
 import s from './Search.scss'
 
@@ -14,8 +15,8 @@ const getNumSelected = (results) => {
 }
 
 const getPlural = (numSelected) => {
-  if (numSelected == 1) return 'app selected'
-  return 'apps selected'
+  if (numSelected == 1) return 'App Selected'
+  return 'Apps Selected'
 }
 
 const getActionBtnText = (numSelected) => {
@@ -65,12 +66,17 @@ export const Search = (props) => {
           <div className={s.actionPanel}>
             <div className={s.displayText}>{`${getNumSelected(props.results)} ${getPlural(getNumSelected(props.results))}`}</div>
             <div className={s.buttonContainer}>
-              <Button primary large block onClick={props.showCompareView}>{getActionBtnText(getNumSelected(props.results))}</Button>
-              <Button primary large block marginTop onClick={props.showCompareView}>Add to your list</Button>
+              <Button primary large block onClick={props.toggleCompareView}>{getActionBtnText(getNumSelected(props.results))}</Button>
+              <Button primary large block marginTop>Add to your list</Button>
             </div>
           </div>
         </div>
       </div>
+
+      { props.showCompareView ? <div className={s.fullscreen}>
+        <div className={s.closeButton} onClick={props.toggleCompareView}></div>
+        <CompareView results={props.results} />
+      </div> : null }
 
     </div>
   )

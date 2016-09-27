@@ -5,7 +5,7 @@ import _ from 'underscore'
 // ------------------------------------
 export const APPLY_SEARCH = 'Search.APPLY_SEARCH'
 export const TOGGLE_COMPANY = 'Search.TOGGLE_COMPANY'
-export const SHOW_COMPARE_VIEW = 'Search.SHOW_COMPARE_VIEW'
+export const TOGGLE_COMPARE_VIEW = 'Search.TOGGLE_COMPARE_VIEW'
 
 // ------------------------------------
 // Actions
@@ -22,14 +22,41 @@ export function toggleCompany (title) {
     payload: title
   }
 }
+export function toggleCompareView () {
+  return {
+    type: TOGGLE_COMPARE_VIEW,
+    payload: {}
+  }
+}
 
 const initialState = {
+  showCompareView: false,
   results: [
     {
       title: 'Google',
       text: 'Social',
       imageUrl: 'https://www.seeklogo.net/wp-content/uploads/2015/09/new-google-favicon-logo.png',
-      selected: false
+      selected: false,
+      summary: {
+        ebp: {
+          type: 'YES'
+        },
+        mp: {
+          type: 'YES'
+        },
+        pp: {
+          type: 'YES'
+        },
+        abp: {
+          type: 'OPT-IN'
+        },
+        tpm: {
+          type: 'NO'
+        },
+        sec: {
+          type: 'YES'
+        }
+      }
     },
     {
       title: 'Facebook',
@@ -123,6 +150,12 @@ const ACTION_HANDLERS = {
       }
       return result
     })
+    return newState
+  },
+
+  [TOGGLE_COMPARE_VIEW]: (state, action) => {
+    let newState = {...state}
+    newState.showCompareView = !newState.showCompareView
     return newState
   }
 }
