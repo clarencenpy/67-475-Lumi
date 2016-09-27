@@ -136,9 +136,8 @@ const ACTION_HANDLERS = {
 
     let newState = {...state}
     newState.results = _.filter(initialState.results, result => {
-      if (result.title.toUpperCase().indexOf(action.payload.toUpperCase()) >= 0) {
-        return true
-      }
+      return result.title.toUpperCase().indexOf(action.payload.toUpperCase()) >= 0 ||
+        result.text.toUpperCase().indexOf(action.payload.toUpperCase()) >= 0
     })
     return newState
   },
