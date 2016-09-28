@@ -94,17 +94,17 @@ export const Dashboard = (props) => {
             <table className={s.table}>
               <tbody>
               <tr>
-                <th className={s.preferenceLabel} >Alert only when updated policies do not match your preferences</th>
-                <td>
-                  <Toggle defaultChecked={props.preferences.alert}
-                          onChange={props.updatePreferences.bind(null, 'alert')} />
-                </td>
-              </tr>
-              <tr>
                 <th className={s.preferenceLabel} >Show visual indicator for Apps that do not match your preferences</th>
                 <td>
                   <Toggle defaultChecked={props.preferences.alert}
                           onChange={props.updatePreferences.bind(null, 'highlight')} />
+                </td>
+              </tr>
+              <tr>
+                <th className={s.preferenceLabel} >Alert only when updated policies do not match your preferences</th>
+                <td>
+                  <Toggle defaultChecked={props.preferences.alert}
+                          onChange={props.updatePreferences.bind(null, 'alert')} />
                 </td>
               </tr>
               </tbody>
