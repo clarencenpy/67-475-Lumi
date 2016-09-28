@@ -11,10 +11,10 @@ export const FakeChrome = (props) => (
     <div className={s.url}>{props.url}</div>
     <div className={s.title}>{props.title}</div>
     <div className={s.iconClickTarget} onClick={props.clickLumiHandler}>
-      <img className={s.icon} src={inactiveIcon} />
+      <img className={s.icon} src={props.lumiActive ? activeIcon : inactiveIcon} />
     </div>
-    <div className={s.fbClickTarget}></div>
-    <div className={s.gClickTarget}></div>
+    <div className={s.fbClickTarget} onClick={props.goFacebook}></div>
+    <div className={s.gClickTarget} onClick={props.goGoogle}></div>
     <img src={left} className={s.left} />
     <img src={center} className={s.center} />
     <img src={right} className={s.right} />

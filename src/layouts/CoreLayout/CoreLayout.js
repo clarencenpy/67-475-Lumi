@@ -7,7 +7,13 @@ import '../../styles/core.scss'
 const CoreLayout = (props) => {
   return (
     <div className={s.wrapper}>
-      <FakeChrome url={props.coreData.fakeUrl} title={props.coreData.fakeTitle} clickLumiHandler={props.startLumi}/>
+      <FakeChrome url={props.coreData.fakeUrl}
+                  title={props.coreData.fakeTitle}
+                  lumiActive={props.coreData.lumiActive}
+                  startLumi={props.startLumi}
+                  goFacebook={props.goFacebook}
+                  goGoogle={props.goGoogle}
+      />
       <Header country={props.coreData.country} />
       <div className={s.mainContainer}>
         {props.children}
