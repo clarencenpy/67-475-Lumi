@@ -147,7 +147,7 @@ export const CompareView = (props) => {
           </td>
           {
             selectedCompanies.map(c => (
-              <RowItem summary={c.summary} metric={'sec'} />
+              <RowItem summary={c.summary} metric={'gov'} />
             ))
           }
         </tr>

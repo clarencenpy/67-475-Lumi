@@ -8,7 +8,6 @@
 }
 
 .left {
-  width: 50%;
   display: flex;
   flex-direction: column;
   border-right: 3px solid black;
@@ -23,6 +22,13 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: $dark-blue;
+}
+
+.headerTextSmall {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
   color: $dark-blue;
 }
 
@@ -44,10 +50,11 @@
   border-radius: 10px;
   padding: 20px;
   min-height: 600px;
+  width: 400px;
 
   .preferenceLabel {
     text-align: left;
-    padding-left: 20px;
+    padding: 10px 20px;
   }
 
 }
@@ -131,6 +138,16 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.table {
+  tbody tr:nth-child(odd) {
+    background: whitesmoke;
+  }
+  td {
+    padding: 10px;
+  }
+}
+
 
 
 

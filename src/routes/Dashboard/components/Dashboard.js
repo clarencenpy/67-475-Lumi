@@ -3,6 +3,7 @@ import s from './Dashboard.scss'
 import Hero from '../../../components/Hero'
 import CompanyCard from '../../../components/CompanyCard'
 import Toggle from 'react-toggle'
+import _ from 'underscore'
 
 const Notification = (props) => (
   <div className={s.notification}>
@@ -22,7 +23,7 @@ const Notification = (props) => (
 
 const PreferenceTable = (props) => {
   return (
-    <table>
+    <table className={s.table}>
       <tbody>
         <tr>
           <th className={s.preferenceLabel} >Everyday Business Purpose</th>
@@ -86,7 +87,28 @@ export const Dashboard = (props) => {
         <div className={s.left}>
           <div className={s.headerText}>Privacy Preferences</div>
           <div className={s.preferencesPanel}>
+            <div className={s.headerTextSmall}>Allow your data to be used for<hr/></div>
             <PreferenceTable preferences={props.preferences} updatePreferences={props.updatePreferences} />
+            <br/>
+            <div className={s.headerTextSmall}>Lumi Settings<hr/></div>
+            <table className={s.table}>
+              <tbody>
+              <tr>
+                <th className={s.preferenceLabel} >Alert only when updated policies do not match your preferences</th>
+                <td>
+                  <Toggle defaultChecked={props.preferences.alert}
+                          onChange={props.updatePreferences.bind(null, 'alert')} />
+                </td>
+              </tr>
+              <tr>
+                <th className={s.preferenceLabel} >Show visual indicator for Apps that do not match your preferences</th>
+                <td>
+                  <Toggle defaultChecked={props.preferences.alert}
+                          onChange={props.updatePreferences.bind(null, 'highlight')} />
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -96,7 +118,7 @@ export const Dashboard = (props) => {
             {
               props.notifications.map(n => {
                 return (
-                  <Notification imageUrl={n.imageUrl} title={n.title} date={n.date} readCallback={props.history.push.bind(null, '/versions')} />
+                  <Notification key={n.title} imageUrl={n.imageUrl} title={n.title} date={n.date} readCallback={props.history.push.bind(null, '/versions')} />
                 )
               })
             }
@@ -105,13 +127,24 @@ export const Dashboard = (props) => {
             <div className={s.headerText}>Your Apps</div>
             <div className={s.appsList}>
               {
-                props.apps.map(a => (
-                  <CompanyCard selected={false}
-                               title={a.title}
-                               text={a.text}
-                               imageUrl={a.imageUrl}
-                  />
-                ))
+                props.apps.map(a => {
+                  let flagged = false
+                  if (props.preferences.highlight) {
+                    _.each(a.summary, (value, key) => {
+                      if (props.preferences[key] === false && value.type === 'YES') {
+                        flagged = true
+                      }
+                    })
+                  }
+                  return (
+                    <CompanyCard flagged={flagged}
+                                 title={a.title}
+                                 key={a.title}
+                                 text={a.text}
+                                 imageUrl={a.imageUrl}
+                    />
+                  )
+                })
               }
             </div>
           </div>
