@@ -18,11 +18,6 @@ export const Header = (props) => (
         activeClassName={s.activeRoute}>
         My Dashboard
       </IndexLink>
-      <Link to='/versions'
-        className={s.link}
-        activeClassName={s.activeRoute}>
-        Alerts
-      </Link>
       <Link to='/search'
         className={s.link}
         activeClassName={s.activeRoute}>

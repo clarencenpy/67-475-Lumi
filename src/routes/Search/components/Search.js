@@ -67,7 +67,7 @@ export const Search = (props) => {
             <div className={s.displayText}>{`${getNumSelected(props.results)} ${getPlural(getNumSelected(props.results))}`}</div>
             <div className={s.buttonContainer}>
               <Button primary large block onClick={props.toggleCompareView}>{getActionBtnText(getNumSelected(props.results))}</Button>
-              <Button primary large block marginTop>Add to your list</Button>
+              <Button primary large block marginTop>Add to your Watchlist</Button>
             </div>
           </div>
         </div>
