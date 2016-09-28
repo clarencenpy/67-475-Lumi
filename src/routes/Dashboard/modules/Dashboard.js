@@ -1,47 +1,32 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const COUNTER_INCREMENT = 'Dashboard.COUNTER_INCREMENT'
+export const UPDATE_PREFERENCES = 'Dashboard.UPDATE_PREFERENCES'
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export function increment (value = 1) {
+export function updatePreferences (field, value) {
   return {
-    type: COUNTER_INCREMENT,
-    payload: value
+    type: UPDATE_PREFERENCES,
+    payload: {
+      field, value
+    }
   }
 }
-
-/*  This is a thunk, meaning it is a function that immediately
- returns a function for lazy evaluation. It is incredibly useful for
- creating async actions, especially when combined with redux-thunk!
-
- NOTE: This is solely for demonstration purposes. In a real application,
- you'd probably want to dispatch an action of COUNTER_DOUBLE and let the
- reducer take care of this logic.  */
-
-export const doubleAsync = () => {
-  return (dispatch, getState) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        dispatch(increment(getState().counter))
-        resolve()
-      }, 200)
-    })
-  }
-}
-
 export const actions = {
-  increment,
-  doubleAsync
+  updatePreferences
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [COUNTER_INCREMENT]: (state, action) => state + action.payload
+  [UPDATE_PREFERENCES]: (state, action) => {
+    const newState = {...state}
+    newState.preferences[action.payload.field] = action.payload.value
+    return newState
+  }
 }
 
 // ------------------------------------
@@ -79,9 +64,31 @@ const initialState = {
       title: 'Evernote',
       text: 'Productivity',
       imageUrl: 'https://gauravchaplot.files.wordpress.com/2016/01/evernote-logo.png?w=300',
+    },
+    {
+      title: 'Gmail',
+      text: 'Productivity',
+      imageUrl: 'https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300',
+    },
+    {
+      title: 'Uber',
+      text: 'Transport',
+      imageUrl: 'http://logo-png.com/thumbs-logo/uber-logo.png',
+    },
+    {
+      title: 'Instagram',
+      text: 'Social',
+      imageUrl: 'http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png',
     }
   ],
-  preferences: {}
+  preferences: {
+    ebp: true,
+    mp: false,
+    pp: true,
+    abp: true,
+    tpm: false,
+    gov: false
+  }
 }
 export default function reducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

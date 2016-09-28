@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Dashboard.scss'
 import Hero from '../../../components/Hero'
 import CompanyCard from '../../../components/CompanyCard'
-import { push } from 'react-router-redux'
+import Toggle from 'react-toggle'
 
 const Notification = (props) => (
   <div className={s.notification}>
@@ -20,6 +20,62 @@ const Notification = (props) => (
   </div>
 )
 
+const PreferenceTable = (props) => {
+  return (
+    <table>
+      <tbody>
+        <tr>
+          <th className={s.preferenceLabel} >Everyday Business Purpose</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.ebp}
+                    onChange={props.updatePreferences.bind(null, 'ebp')} />
+          </td>
+        </tr>
+
+        <tr>
+          <th className={s.preferenceLabel}>Marketing Purpose</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.mp}
+                    onChange={props.updatePreferences.bind(null, 'mp')} />
+          </td>
+        </tr>
+
+        <tr>
+          <th className={s.preferenceLabel}>Profiling Purpose</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.pp}
+                    onChange={props.updatePreferences.bind(null, 'pp')} />
+          </td>
+        </tr>
+
+        <tr>
+          <th className={s.preferenceLabel}>Shared with Affiliates</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.abp}
+                    onChange={props.updatePreferences.bind(null, 'abp')} />
+          </td>
+        </tr>
+
+        <tr>
+          <th className={s.preferenceLabel}>Shared with Third Party Marketers</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.tpm}
+                    onChange={props.updatePreferences.bind(null, 'tpm')} />
+          </td>
+        </tr>
+
+        <tr>
+          <th className={s.preferenceLabel}>Shared with Government Agencies</th>
+          <td>
+            <Toggle defaultChecked={props.preferences.gov}
+                    onChange={props.updatePreferences.bind(null, 'gov')} />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  )
+}
+
 export const Dashboard = (props) => {
   return (
     <div>
@@ -27,7 +83,14 @@ export const Dashboard = (props) => {
 
       <div className={s.root}>
 
-        <div className={s.topSection}>
+        <div className={s.left}>
+          <div className={s.headerText}>Privacy Preferences</div>
+          <div className={s.preferencesPanel}>
+            <PreferenceTable preferences={props.preferences} updatePreferences={props.updatePreferences} />
+          </div>
+        </div>
+
+        <div className={s.right}>
           <div className={s.notificationsPanel}>
             <div className={s.headerText}>Updated<span className={s.countBubble}>{props.notifications.length}</span></div>
             {
@@ -38,20 +101,19 @@ export const Dashboard = (props) => {
               })
             }
           </div>
-        </div>
-
-        <div className={s.bottomSection}>
-          <div className={s.headerText}>Your Apps</div>
-          <div className={s.appsList}>
-            {
-              props.apps.map(a => (
-                <CompanyCard selected={false}
-                             title={a.title}
-                             text={a.text}
-                             imageUrl={a.imageUrl}
-                />
-              ))
-            }
+          <div>
+            <div className={s.headerText}>Your Apps</div>
+            <div className={s.appsList}>
+              {
+                props.apps.map(a => (
+                  <CompanyCard selected={false}
+                               title={a.title}
+                               text={a.text}
+                               imageUrl={a.imageUrl}
+                  />
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>

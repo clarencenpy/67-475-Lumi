@@ -107,7 +107,7 @@ export const CompareView = (props) => {
         <tr>
           <td>
             <div><strong>Profiling Purpose</strong></div>
-            <div>To generate further insights about you based on your interactions with their products using data analytics. Includes your transactions, messages, preferences etc.</div>
+            <div>To generate further insights about you based on your interactions with their products using data analytics</div>
           </td>
           {
             selectedCompanies.map(c => (
@@ -130,8 +130,8 @@ export const CompareView = (props) => {
 
         <tr>
           <td>
-            <div><strong>Third Party Marketing</strong></div>
-            <div>For other companies to perform targeted advertising of their products and services</div>
+            <div><strong>Shared with Third Party Marketers</strong></div>
+            <div>To perform targeted advertising campaigns of other products and services</div>
           </td>
           {
             selectedCompanies.map(c => (
@@ -142,8 +142,8 @@ export const CompareView = (props) => {
 
         <tr>
           <td>
-            <div><strong>Security</strong></div>
-            <div>Data is encrypted in transit and storage, with appropriate measures to anonymise sensitive information</div>
+            <div><strong>Shared with Government Agencies</strong></div>
+            <div>Without going through the official legal process</div>
           </td>
           {
             selectedCompanies.map(c => (

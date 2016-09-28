@@ -49,7 +49,7 @@ const initialState = {
         },
         abp: {
           type: 'OPT-IN',
-          htmlContent: `<div>Your permission is when a third party app requests for your information</div>`
+          htmlContent: `<div>Your permission is needed when a third party app requests for your information</div>`
         },
         tpm: {
           type: 'NO'

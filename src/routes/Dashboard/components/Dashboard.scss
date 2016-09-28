@@ -2,14 +2,18 @@
 .root {
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
 }
 
-.topSection {
+.left {
+  width: 50%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  border-right: 3px solid black;
+  margin-right: 40px;
+  padding-right: 40px;
 }
 
 
@@ -33,6 +37,19 @@
   font-size: 18px;
   text-align: center;
   border-radius: 50%;
+}
+
+.preferencesPanel {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 600px;
+
+  .preferenceLabel {
+    text-align: left;
+    padding-left: 20px;
+  }
+
 }
 
 .notificationsPanel, .appsPanel {
