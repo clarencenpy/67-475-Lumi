@@ -34,7 +34,7 @@ export const Header = (props) => (
       <Link to='/logout'
         className={s.link}
         activeClassName={s.activeRoute}>
-        Logout
+        Contribute
       </Link>
     </div>
   </div>

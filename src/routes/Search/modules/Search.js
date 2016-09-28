@@ -113,6 +113,59 @@ const initialState = {
       }
     },
     {
+      title: 'Telegram',
+      text: 'Chat',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/500px-Telegram_logo.svg.png',
+      selected: false,
+      summary: {
+        ebp: {
+          type: 'YES'
+        },
+        mp: {
+          type: 'NO'
+        },
+        pp: {
+          type: 'NO'
+        },
+        abp: {
+          type: 'NO',
+        },
+        tpm: {
+          type: 'NO'
+        },
+        gov: {
+          type: 'NO',
+          htmlContent: '<div>Chats may be encrypted</div>'
+        }
+      }
+    },
+    {
+      title: 'Allo',
+      text: 'Chat',
+      imageUrl: 'https://lh3.googleusercontent.com/S8DKhY39f1jpVy1-JV3qpI_ftuJwJnKjNbRhrVRGi-MQjr6i73JQI3-dmkQ93E0Jb4hT=w300',
+      selected: false,
+      summary: {
+        ebp: {
+          type: 'YES'
+        },
+        mp: {
+          type: 'YES'
+        },
+        pp: {
+          type: 'YES'
+        },
+        abp: {
+          type: 'NO',
+        },
+        tpm: {
+          type: 'NO'
+        },
+        gov: {
+          type: 'NO'
+        }
+      }
+    },
+    {
       title: 'Instagram',
       text: 'Social',
       imageUrl: 'http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png',
