@@ -5,18 +5,18 @@
 }
 
 .left {
-  height: 70px;
+  height: 95px;
   width: 405px;
 }
 
 .center {
-  height: 70px;
-  width: calc(100vw - 405px - 250px);
+  height: 95px;
+  width: calc(100vw - 405px - 330px);
 }
 
 .right {
-  height: 70px;
-  width: 250px;
+  height: 95px;
+  width: 330px;
 }
 
 .url {
@@ -38,10 +38,46 @@
 .iconClickTarget {
   transition: box-shadow 0.2s;
   position: fixed;
-  top: 38px;
-  right: 26px;
-  width: 30px;
-  height: 30px;
+  top: 42px;
+  right: 30px;
+  width: 27px;
+  height: 27px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    box-shadow: $box-shadow-small;
+  }
+
+  .icon {
+    margin-top: 2px;
+    width: 24px;
+    height: 21px;
+  }
+}
+
+.fbClickTarget {
+  transition: box-shadow 0.2s;
+  position: fixed;
+  top: 70px;
+  left: 65px;
+  width: 85px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    box-shadow: $box-shadow-small;
+  }
+}
+
+.gClickTarget {
+  transition: box-shadow 0.2s;
+  position: fixed;
+  top: 70px;
+  left: 150px;
+  width: 115px;
+  height: 24px;
   cursor: pointer;
   border-radius: 4px;
 
