@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Dashboard.scss'
 import Hero from '../../../components/Hero'
 import CompanyCard from '../../../components/CompanyCard'
+import { push } from 'react-router-redux'
 
 const Notification = (props) => (
   <div className={s.notification}>
@@ -13,7 +14,7 @@ const Notification = (props) => (
       </div>
     </div>
     <div className={s.actionButtons}>
-      <div className={s.button + " " + s.read}>Read</div>
+      <div className={s.button + " " + s.read} onClick={props.readCallback}>Read</div>
       <div className={s.button + " " + s.dismiss}>Dismiss</div>
     </div>
   </div>
@@ -30,9 +31,11 @@ export const Dashboard = (props) => {
           <div className={s.notificationsPanel}>
             <div className={s.headerText}>Updated<span className={s.countBubble}>{props.notifications.length}</span></div>
             {
-              props.notifications.map(n => (
-                <Notification imageUrl={n.imageUrl} title={n.title} date={n.date} />
-              ))
+              props.notifications.map(n => {
+                return (
+                  <Notification imageUrl={n.imageUrl} title={n.title} date={n.date} readCallback={props.history.push.bind(null, '/versions')} />
+                )
+              })
             }
           </div>
         </div>
