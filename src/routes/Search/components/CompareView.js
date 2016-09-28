@@ -25,7 +25,7 @@ const RowItem = (props) => {
       contents = (<FontAwesome name="check" size="2x" className={s.black} />)
       break
     case 'NO':
-      contents = null;
+      contents = <span>-</span>;
       break
     case 'OPT-IN':
       contents = (<span className={s.opt}>Opt-In</span>)

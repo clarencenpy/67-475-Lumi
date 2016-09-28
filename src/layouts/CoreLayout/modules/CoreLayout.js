@@ -34,8 +34,11 @@ export function goGoogle () {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [START_LUMI]: (state, action) => {
-    console.log('clicked start Lumi')
-    return {...state}
+    console.log('starting...')
+    return {
+      ...state,
+      startLumi: !state.startLumi
+    }
   },
   [GO_FACEBOOK]: (state, action) => {
     return {
@@ -43,7 +46,6 @@ const ACTION_HANDLERS = {
       fakeUrl: 'https://facebook.com',
       fakeTitle: 'Facebook',
       lumiActive: true,
-      showIFrame: true
     }
   },
   [GO_GOOGLE]: (state, action) => {
@@ -52,7 +54,6 @@ const ACTION_HANDLERS = {
       fakeUrl: 'https://www.google.com/webhp?ion=1&espv=2&ie=UTF-8#q=buy%20pc%20parts',
       fakeTitle: 'buy pc parts - Google',
       lumiActive: true,
-      showIFrame: true
     }
   }
 }
