@@ -10,5 +10,5 @@ Proof of concept for 67-475
 * Highlight differences between revisions for privacy policies
 * Concise and visual brief on the terms and implications, in a way that allows comparison between different companies or service providers
 
-![Screenshot](screenshots/ScreenshotDashboard.png?raw=true "Screenshot")
-![Screenshot](screenshots/ScreenshotCompare.png?raw=true "Screenshot")
+![Screenshot](ScreenshotDashboard.png?raw=true "Screenshot")
+![Screenshot](ScreenshotCompare.png?raw=true "Screenshot")
